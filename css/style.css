@@ -1,0 +1,138 @@
+@font-face{
+    font-family: Koulen;
+    src: url(../font/Koulen/Koulen-Regular.ttf);
+}
+
+@font-face{
+    font-family: Nunito;
+    src: url(../font/Nunito/static/Nunito-Regular.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #232830;
+}
+
+.container{
+    background-color: rgba(66, 66, 66, 0.438);
+    display: flex;
+    flex-direction: column;
+    gap: 10vh;
+    margin: 5vh 30vw 0;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.labels{
+    display: flex;
+    flex-direction: column;
+}
+
+.active{
+    background-color:#036efb;
+	border-radius: 8px;
+    border: none;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:19px 39px;
+	text-decoration:none;
+    transition: .3s;
+    margin-top: 1vh;
+    max-width: 100%;
+    text-align: center;
+}
+
+h1{
+    color:white;
+    font-family: "Koulen";
+    text-align: center;
+    font-size: 3em;
+}
+
+input{
+    padding: 12px;
+    font-size: 16px;
+    background-color: #232830;
+    color: #ffffff;
+    border-style: solid;
+    border-radius: 14px;
+    box-shadow: 0px 0px 5px rgba(66,66,66,.75);
+    text-shadow: 0px 0px 5px rgba(66,66,66,.75);
+}
+
+input:focus{
+    outline:none;
+}
+
+label{
+    color: white;
+    font-family: "Nunito";
+}
+
+button{
+	background-color:#036efb;
+	border-radius:28px;
+    border: none;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:19px 39px;
+	text-decoration:none;
+    transition: .3s;
+    margin-top: 1vh;
+}
+button:hover {
+	background-color: #036efb48;
+}
+button:active {
+	position:relative;
+	top:1px;
+}
+
+@media(max-width: 850px){
+    .container{
+        margin: 5vh 20vw 0;
+    }
+
+    .resultados{
+        margin-top: -4vh;
+    }
+}
+
+@media(max-width: 580px){
+    .container{
+        margin: 5vh 10vw 0;
+    }
+
+    .resultados{
+        margin-top: -6vh;
+    }
+}
+
+@media(max-width: 412px){
+    .container{
+        margin: 0;
+        min-height: 100vh;
+    }
+
+    .resultados{
+        margin-top: -8vh;
+    }
+}
+
+@media(max-height: 1400px){
+    @media(max-width: 1000px){
+        .container{
+            margin: 0;
+            min-height: 100vh;
+        }
+    }
+}
