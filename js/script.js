@@ -33,11 +33,15 @@ function converter_bin(){
 
 document.querySelector("#user_input_bin").onkeypress = function(e){
     let chr = String.fromCharCode(e.which);
+    let key_code = e.keyCode ? e.keyCode : e.charCode ? e.charCode : e.which ? e.which : void 0;
 
-    if("1234567890qwertyuioplkjhgfdsazxcvbnmQWERTYUIOPLKJHGFDSAZXCVBNM".indexOf(chr) < 0){
-        alert("Campo deverá conter apenas números");
-        return false;
+    if(key_code != 13){
+        if("1234567890".indexOf(chr) < 0){
+            alert("Campo deverá conter apenas números a");
+            return false;
+        }
     }
+    
 };
 
 function converter_dec(){
@@ -47,6 +51,7 @@ function converter_dec(){
         alert("Campo deverá ser preenchido");
         return false;
     }
+    
 
     let tamanho_string = $user_input_dec.length;
     let expoente = 0;
@@ -88,7 +93,7 @@ function validar(field){
 }
 
 function numerico(evt){
-    var key_code = evt.keyCode ? evt.keyCode : evt.charCode ? evt.charCode : evt.which ? evt.which : void 0;
+    let key_code = evt.keyCode ? evt.keyCode : evt.charCode ? evt.charCode : evt.which ? evt.which : void 0;
 
 
     if(key_code == 8 || key_code == 9 || key_code == 13 || key_code == 27 || key_code == 46 || key_code == 190){
@@ -106,9 +111,9 @@ function numerico(evt){
 }
 
 function numerico_dec(evt){
-    var key_code = evt.keyCode ? evt.keyCode : evt.charCode ? evt.charCode : evt.which ? evt.which : void 0;
+    let key_code = evt.keyCode ? evt.keyCode : evt.charCode ? evt.charCode : evt.which ? evt.which : void 0;
 
-    if(key_code == 49 || key_code == 48){
+    if(key_code == 49 || key_code == 48 || key_code == 13){
         return true;
     }
     

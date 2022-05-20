@@ -14,13 +14,14 @@
         <div id="label1" class="labels">
             <label for="bin">Converter de Decimal para Binário</label>
             <input type="text" onkeypress="validar(this);return numerico(event);" id="user_input_bin" name="bin" placeholder="Insira um valor Decimal">
-            <button onclick="converter_bin()">Converter</button>
+            <input type="submit" value="Converter" onclick="converter_bin()" class="buttons" id="oi">
         </div>
 
         <div id="label2" class="labels">
             <label for="dec">Converter de Binário para decimal</label>
             <input type="text" onkeypress="validar(this);return numerico_dec(event);" id="user_input_dec" name="dec" placeholder="Insira um valor Binário">
-            <button onclick="converter_dec()">Converter</button>
+            <input type="submit" value="Converter" onclick="converter_dec()" class="buttons">
+
         </div>
 
         <div class="resultados" class="labels">
