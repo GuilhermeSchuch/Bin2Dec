@@ -12,6 +12,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow-y: hidden;
 }
 
 body{
@@ -110,10 +111,6 @@ label{
 @media(max-width: 580px){
     .container{
         margin: 5vh 10vw 0;
-    }
-
-    .resultados{
-        margin-top: -6vh;
     }
 }
 

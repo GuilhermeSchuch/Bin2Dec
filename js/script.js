@@ -10,6 +10,19 @@ function converter_bin(){
         return false;
     }
 
+    document.querySelector("#user_input_bin").onkeypress = function(e){
+        let chr = String.fromCharCode(e.which);
+        let key_code = e.keyCode ? e.keyCode : e.charCode ? e.charCode : e.which ? e.which : void 0;
+    
+        if(key_code != 13){
+            if("123456789".indexOf(chr) < 0){
+                alert("Campo deverá conter apenas números");
+                return false;
+            }
+        }
+        
+    };
+
     while($user_input_bin != 1){
         if($user_input_bin % 2 == 0){
             $user_input_bin /= 2;
@@ -31,18 +44,7 @@ function converter_bin(){
     document.querySelector("#user_input_bin").value = '';
 }
 
-document.querySelector("#user_input_bin").onkeypress = function(e){
-    let chr = String.fromCharCode(e.which);
-    let key_code = e.keyCode ? e.keyCode : e.charCode ? e.charCode : e.which ? e.which : void 0;
 
-    if(key_code != 13){
-        if("1234567890".indexOf(chr) < 0){
-            alert("Campo deverá conter apenas números a");
-            return false;
-        }
-    }
-    
-};
 
 function converter_dec(){
     let $user_input_dec = document.querySelector("#user_input_dec").value;
@@ -51,7 +53,19 @@ function converter_dec(){
         alert("Campo deverá ser preenchido");
         return false;
     }
+
+    document.querySelector("#user_input_dec").onkeypress = function(e){
+        let chr = String.fromCharCode(e.which);
+        let key_code = e.keyCode ? e.keyCode : e.charCode ? e.charCode : e.which ? e.which : void 0;
     
+        if(key_code != 13){
+            if("10".indexOf(chr) < 0){
+                alert("Campo deverá conter apenas 0 e 1");
+                return false;
+            }
+        }
+        
+    };
 
     let tamanho_string = $user_input_dec.length;
     let expoente = 0;
@@ -64,6 +78,7 @@ function converter_dec(){
             expoente = 0;
         }
     }
+
     $div_resultado_dec.classList.add("active");
     $div_resultado_bin.classList.remove("active");
 
