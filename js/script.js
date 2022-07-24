@@ -5,23 +5,8 @@ let texto_resultado = '';
 function converter_bin(){
     let $user_input_bin = document.querySelector("#user_input_bin").value;
 
-    if($user_input_bin == ''){
-        alert("Campo deverá ser preenchido");
-        return false;
-    }
 
-    document.querySelector("#user_input_bin").onkeypress = function(e){
-        let chr = String.fromCharCode(e.which);
-        let key_code = e.keyCode ? e.keyCode : e.charCode ? e.charCode : e.which ? e.which : void 0;
-    
-        if(key_code != 13){
-            if("123456789".indexOf(chr) < 0){
-                alert("Campo deverá conter apenas números");
-                return false;
-            }
-        }
-        
-    };
+
 
     while($user_input_bin != 1){
         if($user_input_bin % 2 == 0){
@@ -108,23 +93,7 @@ function validar(field){
     }
 }
 
-function numerico(evt){
-    let key_code = evt.keyCode ? evt.keyCode : evt.charCode ? evt.charCode : evt.which ? evt.which : void 0;
 
-
-    if(key_code == 8 || key_code == 9 || key_code == 13 || key_code == 27 || key_code == 46 || key_code == 190){
-        return true;
-    }
-    else if((key_code >= 35) && (key_code <= 40)){
-        return true;
-    }
-    else if((key_code >= 48) && (key_code <= 57)){
-        return true;
-    }
-
-    alert("Campo deverá conter apenas números");
-    return false;
-}
 
 function numerico_dec(evt){
     let key_code = evt.keyCode ? evt.keyCode : evt.charCode ? evt.charCode : evt.which ? evt.which : void 0;
