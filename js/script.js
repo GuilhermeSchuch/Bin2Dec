@@ -44,14 +44,15 @@ function converter_bin(){
     document.querySelector("#user_input_bin").value = '';
 }
 
-
-
 function converter_dec(){
     let $user_input_dec = document.querySelector("#user_input_dec").value;
 
     if($user_input_dec == ''){
         alert("Campo deverá ser preenchido");
         return false;
+    }
+    if($user_input_dec != '1' || $user_input_dec != '0'){
+
     }
 
     document.querySelector("#user_input_dec").onkeypress = function(e){
