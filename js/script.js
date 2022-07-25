@@ -5,13 +5,6 @@ let texto_resultado = '';
 function converter_bin(){
     let $user_input_bin = document.querySelector("#user_input_bin").value;
 
-    if($user_input_bin == ''){
-        alert("Campo deverá ser preenchido");
-        return false;
-    }
-
-
-
     while($user_input_bin != 1){
         if($user_input_bin % 2 == 0){
             $user_input_bin /= 2;
@@ -35,14 +28,6 @@ function converter_bin(){
 
 function converter_dec(){
     let $user_input_dec = document.querySelector("#user_input_dec").value;
-
-    if($user_input_dec == ''){
-        alert("Campo deverá ser preenchido");
-        return false;
-    }
-    if($user_input_dec != '1' || $user_input_dec != '0'){
-
-    }
 
     let tamanho_string = $user_input_dec.length;
     let expoente = 0;
@@ -82,17 +67,4 @@ function validar(field){
     if(str.length > 7){
         field.value = str.substring(0, str.length - 1);
     }
-}
-
-
-
-function numerico_dec(evt){
-    let key_code = evt.keyCode ? evt.keyCode : evt.charCode ? evt.charCode : evt.which ? evt.which : void 0;
-
-    if(key_code == 49 || key_code == 48 || key_code == 13){
-        return true;
-    }
-    
-    alert("Campo deverá conter apenas '0' e '1'");
-    return false;
 }

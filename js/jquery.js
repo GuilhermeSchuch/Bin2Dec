@@ -1,26 +1,23 @@
-document.querySelector("#user_input_bin").onkeypress = function(e){
-    let chr = String.fromCharCode(e.which);
-    let key_code = e.keyCode ? e.keyCode : e.charCode ? e.charCode : e.which ? e.which : void 0;
-
-    if(key_code != 13){
-        if("123456789".indexOf(chr) < 0){
-            alert("Campo deverá conter apenas números");
-            $(this).removeAttr('value');
-            return false;
-        }
-    }
+$('#user_input_bin').on("input", function(e) {
+    $(this).val($(this).val().replace(/[^0-9]/g, ""));
     
-};
-
-document.querySelector("#user_input_dec").onkeypress = function(e){
-    let chr = String.fromCharCode(e.which);
-    let key_code = e.keyCode ? e.keyCode : e.charCode ? e.charCode : e.which ? e.which : void 0;
-
-    if(key_code != 13){
-        if("10".indexOf(chr) < 0){
-            alert("Campo deverá conter apenas 0 e 1");
-            return false;
+    $('#user_input_bin').on('change', function() {
+        var value = $(this).val()
+      
+        if (value.indexOf('0123456789') === -1) {
+            return
         }
-    }
+    })
+});
+
+$('#user_input_dec').on("input", function(e) {
+    $(this).val($(this).val().replace(/[^0-1]/g, ""));
     
-};
+    $('#user_input_dec').on('change', function() {
+        var value = $(this).val()
+      
+        if (value.indexOf('01') === -1) {
+            return
+        }      
+      })
+});
